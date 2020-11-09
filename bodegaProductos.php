@@ -13,7 +13,7 @@
 
     <header>
         <div class="jumbotron">
-            <h1 class="display-4">Manga Shoppu</h1>
+            <h1 class="display-4 font-weight-bold">Manga Shoppu</h1>
             <p class="lead">Bienvenidos a la tienda virtual de Manga. El lugar donde se vale tomarte un break y vivir historias nunca antes vistas.</p>
             <hr class="my-4">
             <a class="btn btn-primary btn-lg mr-3" href="formulario.php" role="button">Registro de productos</a>
@@ -47,7 +47,7 @@
 
                     <div class="col-md-4 mb-5">
                         <div class="card">
-                            <img src="..." class="card-img-top">
+                            <img src="" class="card-img-top">
                             <div class="card-body">
                                 <h3 class="card-title font-weight-bold"><?php echo ($producto["nombreProducto"]); ?></h3>
                                 <h3 class="card-title"><?php echo ($producto["marca"]); ?></h3>

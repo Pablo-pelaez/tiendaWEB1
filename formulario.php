@@ -13,11 +13,11 @@
 
     <header>
         <div class="jumbotron">
-            <h1 class="display-4">Manga Shoppu</h1>
+            <h1 class="display-4 font-weight-bold">Manga Shoppu</h1>
             <p class="lead">Bienvenidos a la tienda virtual de Manga. El lugar donde se vale tomarte un break y vivir historias nunca antes vistas.</p>
             <hr class="my-4">
-            <a class="btn btn-primary btn-lg mr-3" href="formulario.php" role="button">Registro de productos</a>
-            <a class="btn btn-success btn-lg ml-3" href="bodegaProductos.php" role="button">Productos en Bodega</a>
+            <a class="btn btn-primary btn-lg mr-3 m" href="formulario.php" role="button">Registro de productos</a>
+            <a class="btn btn-success btn-lg ml-3 m" href="bodegaProductos.php" role="button">Productos en Bodega</a>
         </div>
     </header>
 
