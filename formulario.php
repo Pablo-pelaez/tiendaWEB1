@@ -36,6 +36,11 @@
                     </div>
                 </div>
 
+                <div class="mt-4">
+                    <label class="font-weight-bold">Imagen</label>
+                    <input type="text" class="form-control" placeholder="Ingrese link de Imagen" name="imagen">
+                </div>
+
                 <div class="form-group mt-5">
                     <input type="number" required class="form-control" id="inputAddress2" placeholder="Precio del producto" name="precio">
                 </div>

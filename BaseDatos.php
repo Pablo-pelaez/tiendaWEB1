@@ -89,6 +89,28 @@
     
         }
 
+        public function editarDatos($consultaSQL)
+        {
+            //establecer una conexión
+            $conexionBD = $this->conectarDB();
+    
+            //preparar una consulta
+            $editarDatos = $conexionBD->prepare($consultaSQL);
+    
+            //Ejecutar consulta
+            $resultado = $editarDatos->execute();
+    
+            //verifico resultado
+            if($resultado)
+            {
+                echo("Usuario editado");
+            }
+            else
+            {
+                echo("error al editar");   //documentacion para lanzar error
+            }
+        }
+
 
     }
 

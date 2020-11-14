@@ -47,16 +47,58 @@
 
                     <div class="col-md-4 mb-5">
                         <div class="card">
-                            <img src="" class="card-img-top">
+                            <img src=" <?php echo ($producto["imagen"]) ?> " class="card-img-top">
                             <div class="card-body">
                                 <h3 class="card-title font-weight-bold"><?php echo ($producto["nombreProducto"]); ?></h3>
                                 <h3 class="card-title"><?php echo ($producto["marca"]); ?></h3>
                                 <h2 class="card-title text-success"><?php echo ($producto["precio"]); ?></h2>
                                 <p class="card-text"><?php echo ($producto["descripcion"]); ?></p>
                                 <a href="eliminarProductos.php?id= <?php echo ($producto['idProducto']) ?>" class="btn btn-danger">Eliminar</a>
-                                <a href="metodosCRUD.php?id= <?php echo ($producto['idProducto']) ?>" class="btn btn-success">Añadir</a>
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo ($usuario["idProducto"]) ?>">
+                                    Editar Producto
+                                </button>
                             </div>
                         </div>
+
+                        <div class="modal fade" id="editar<?php echo ($producto["idProducto"]) ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edición de producto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <form action="registrarProductos.php" method="POST">
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="text" required class="form-control" placeholder="Nombre del producto" name="nombreEditar">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="text" required class="form-control" placeholder="Marca/Editorial del producto" name="marcaProductoEditar">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mt-5">
+                                                <input type="number" required class="form-control" id="inputAddress2" placeholder="Precio del producto" name="precioProductoEditar">
+                                            </div>
+                                            <div class="form-group mt-5">
+                                                <input type="text" required class="form-control" id="inputAddress2" placeholder="Descripción del producto" name="desccripcionEditar">
+                                            </div>
+
+                                            <div class="col-md-12 text-center mt-4">
+                                                <button type="submit" class="btn btn-info" name="botonEditar">Editar</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                 <?php endforeach; ?>
