@@ -45,7 +45,8 @@
                     <input type="number" required class="form-control" id="inputAddress2" placeholder="Precio del producto" name="precio">
                 </div>
                 <div class="form-group mt-5">
-                    <input type="text" required class="form-control" id="inputAddress2" placeholder="Descripción del producto" name="descripcion">
+                    <!--<input type="text" required class="form-control" id="inputAddress2" placeholder="Descripción del producto" name="descripcion">-->
+                    <textarea required class="form-control" rows="3" placeholder="Descripción del producto" name="descripcion"></textarea>
                 </div>
 
                 <div class="col-md-12 text-center mt-4">

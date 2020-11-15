@@ -71,22 +71,23 @@
                                     </div>
                                     <div class="modal-body">
 
-                                        <form action="registrarProductos.php" method="POST">
+                                        <form action="editarProductos.php?id= <?php echo($producto["idProducto"]); ?>" method="POST">
 
                                             <div class="row">
                                                 <div class="col">
-                                                    <input type="text" required class="form-control" placeholder="Nombre del producto" name="nombreEditar">
+                                                    <input type="text" required class="form-control" placeholder="Nombre del producto" name="nombreEditar" value="<?php echo($producto["nombreProducto"]) ?>">
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text" required class="form-control" placeholder="Marca/Editorial del producto" name="marcaProductoEditar">
+                                                    <input type="text" required class="form-control" placeholder="Marca/Editorial del producto" name="marcaProductoEditar" value=" <?php echo($producto["marca"]) ?> ">
                                                 </div>
                                             </div>
 
                                             <div class="form-group mt-5">
-                                                <input type="number" required class="form-control" id="inputAddress2" placeholder="Precio del producto" name="precioProductoEditar">
+                                                <input type="number" required class="form-control" id="inputAddress2" placeholder="Precio del producto" name="precioProductoEditar" value=" <?php echo($producto["precio"]) ?> ">
                                             </div>
                                             <div class="form-group mt-5">
-                                                <input type="text" required class="form-control" id="inputAddress2" placeholder="Descripción del producto" name="desccripcionEditar">
+                                                <!--<input type="text" required class="form-control" id="inputAddress2" placeholder="Descripción del producto" name="descripcionEditar">-->
+                                                <textarea required class="form-control" rows="3" placeholder="Descripción del producto" name="descripcionEditar"><?php echo($producto["descripcion"]) ?></textarea>
                                             </div>
 
                                             <div class="col-md-12 text-center mt-4">

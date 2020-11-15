@@ -15,7 +15,7 @@ if(isset($_POST["botonEditar"]))
     $nombre = $_POST["nombreEditar"];
     $marcaProducto = ["marcaProductoEditar"];
     $precioProducto = ["precioProductoEditar"];
-    $descripcionProducto = $_POST["desccripcionEditar"];
+    $descripcionProducto = $_POST["descripcionEditar"];
 
     //Consulta para editar un registro
     $consultaSQL = "UPDATE productos SET nombreEditar='$nombreProducto' ,desccripcionEditar='$descripcionProducto' WHERE idProducto='$id' ";
