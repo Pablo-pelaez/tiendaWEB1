@@ -42,24 +42,23 @@
         <div class="container">
 
             <div class="card-deck">
-
                 <?php foreach ($productos as $producto) : ?>
 
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-4 mb-4">
+
                         <div class="card">
-                            <img src=" <?php echo ($producto["imagen"]) ?> " class="card-img-top">
+                            <img src="<?php echo ($producto["imagen"]) ?>" class="card-img-top" alt="Foto">
                             <div class="card-body">
-                                <h3 class="card-title font-weight-bold"><?php echo ($producto["nombreProducto"]); ?></h3>
-                                <h3 class="card-title"><?php echo ($producto["marca"]); ?></h3>
-                                <h2 class="card-title text-success"><?php echo ($producto["precio"]); ?></h2>
-                                <p class="card-text"><?php echo ($producto["descripcion"]); ?></p>
+                                <h3 class="card-title"><?php echo ($producto["nombreProducto"]) ?></h3>
+                                <h4 class="card-title"><?php echo ($producto["marca"]) ?></h4>
+                                <h5 class="card-text"><?php echo ($producto["precio"]) ?></h5>
+                                <p class="card-text"><?php echo ($producto["descripcion"]) ?></p>
                                 <a href="eliminarProductos.php?id= <?php echo ($producto['idProducto']) ?>" class="btn btn-danger">Eliminar</a>
-                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo ($usuario["idProducto"]) ?>">
-                                    Editar Producto
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo ($producto["idProducto"]) ?>">
+                                    Editar
                                 </button>
                             </div>
                         </div>
-
                         <div class="modal fade" id="editar<?php echo ($producto["idProducto"]) ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -70,31 +69,25 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-
-                                        <form action="editarProductos.php?id= <?php echo($producto["idProducto"]); ?>" method="POST">
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input type="text" required class="form-control" placeholder="Nombre del producto" name="nombreEditar" value="<?php echo($producto["nombreProducto"]) ?>">
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" required class="form-control" placeholder="Marca/Editorial del producto" name="marcaProductoEditar" value=" <?php echo($producto["marca"]) ?> ">
-                                                </div>
+                                        <form action="editarProductos.php?id= <?php echo ($producto["idProducto"]); ?>" method="POST">
+                                            <div class="form-group">
+                                                <label>Nombre Producto</label>
+                                                <input type="text" class="form-control" name="nombreEditar" value="<?php echo ($producto["nombreProducto"]) ?>">
                                             </div>
-
-                                            <div class="form-group mt-5">
-                                                <input type="number" required class="form-control" id="inputAddress2" placeholder="Precio del producto" name="precioProductoEditar" value=" <?php echo($producto["precio"]) ?> ">
+                                            <div class="form-group">
+                                                <label>Marca</label>
+                                                <input type="text" class="form-control" name="marcaProductoEditar" value="<?php echo ($producto["marca"]) ?>">
                                             </div>
-                                            <div class="form-group mt-5">
-                                                <!--<input type="text" required class="form-control" id="inputAddress2" placeholder="Descripción del producto" name="descripcionEditar">-->
-                                                <textarea required class="form-control" rows="3" placeholder="Descripción del producto" name="descripcionEditar"><?php echo($producto["descripcion"]) ?></textarea>
+                                            <div class="form-group">
+                                                <label>Precio</label>
+                                                <input type="text" class="form-control" name="precioProductoEditar" value="<?php echo ($producto["precio"]) ?>">
                                             </div>
-
-                                            <div class="col-md-12 text-center mt-4">
-                                                <button type="submit" class="btn btn-info" name="botonEditar">Editar</button>
+                                            <div class="form-group">
+                                                <label>Descripción</label>
+                                                <textarea class="form-control" rows="3" name="descripcionEditar"><?php echo ($producto["descripcion"]) ?></textarea>
                                             </div>
+                                            <button type="submit" class="btn btn-warning" name="botonEdicion">Enviar</button>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>
@@ -102,9 +95,11 @@
 
                     </div>
 
-                <?php endforeach; ?>
+                <?php endforeach ?>
 
             </div>
+
+        </div>
 
     </main>
 

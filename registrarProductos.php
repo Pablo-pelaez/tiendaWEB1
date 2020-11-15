@@ -10,15 +10,19 @@ if(isset($_POST["botonEnviar"]))
     $marca = $_POST["marca"];
     $precio = $_POST["precio"];
     $descripcion = $_POST["descripcion"];
+    $imagen = $_POST["imagen"];
 
     //copia u objeto de la BD
     $transaccion = new BaseDatos();
 
     //crear consulta
-    $consultaSQL="INSERT INTO productos(nombreProducto, marca, precio, descripcion) VALUES ('$nombreProducto', '$marca', '$precio', '$descripcion')";
+    $consultaSQL="INSERT INTO productos(nombreProducto, marca, precio, descripcion, imagen) VALUES ('$nombreProducto', '$marca', '$precio', '$descripcion', '$imagen')";
 
     //llamo al metodo de la clase agregar BD agregarDatos
     $transaccion->agregarDatos($consultaSQL);
+
+    //Redireccionamiento
+    header("location:formulario.php");
 }   
 
 ?> 

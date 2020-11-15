@@ -16,5 +16,8 @@
     //Utilizar el método para eliminar
     $transaccion->eliminarDatos($consultaSQL);
 
+    //Redireccionamiento
+    header("location:bodegaProductos.php");
+
 
 ?>

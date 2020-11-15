@@ -7,24 +7,24 @@ include ('BaseDatos.php');
 $transaccion = new BaseDatos();
 
 //Recibir datos
-if(isset($_POST["botonEditar"]))
+if(isset($_POST["botonEdicion"]))
 {
     //Recibir el id que qiero editar
     $id=$_GET["id"];
     
     $nombre = $_POST["nombreEditar"];
-    $marcaProducto = ["marcaProductoEditar"];
-    $precioProducto = ["precioProductoEditar"];
-    $descripcionProducto = $_POST["descripcionEditar"];
+    $marca = $_POST["marcaProductoEditar"];
+    $precio = $_POST["precioProductoEditar"];
+    $descripcion = $_POST["descripcionEditar"];
 
     //Consulta para editar un registro
-    $consultaSQL = "UPDATE productos SET nombreEditar='$nombreProducto' ,desccripcionEditar='$descripcionProducto' WHERE idProducto='$id' ";
+    $consultaSQL = "UPDATE productos SET nombreProducto='$nombre' ,marca='$marca', precio='$precio', descripcion='$descripcion' WHERE idProducto='$id' ";
 
     //Utilizar el método editarDatos
     $transaccion->editarDatos($consultaSQL);
 
     //Redirección
-    header("location:listaUsuarios.php");
+    header("location:bodegaProductos.php");
     
 }
 
