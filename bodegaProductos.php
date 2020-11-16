@@ -41,6 +41,7 @@
 
         <div class="container">
 
+            <h1 class="mb-5 text-center">BODEGA PRODUCTOS SHOPPU</h1>
             <div class="card-deck">
                 <?php foreach ($productos as $producto) : ?>
 
