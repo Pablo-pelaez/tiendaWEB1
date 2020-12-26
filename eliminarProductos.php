@@ -19,5 +19,4 @@
     //Redireccionamiento
     header("location:bodegaProductos.php");
 
-
 ?>
